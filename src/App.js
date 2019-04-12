@@ -4,6 +4,8 @@ import './App.css';
 
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
+import Checkin from './components/Checkin';
+import Timer from './components/Timer';
 
 class App extends Component {
   render() {
@@ -11,6 +13,8 @@ class App extends Component {
       <div>
         <Jumbotron />
         <Navbar />
+        <Checkin />
+        <Timer />
       </div>
     )
   }
