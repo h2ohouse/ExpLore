@@ -1,34 +1,40 @@
-import mongoose from 'mongoose';
+var mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     // email for auth
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
     // pw for auth
   password: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
     // starts character information
-  Name: {
+  name: {
     type: String,
     required: true
   },
   lives: {
-    type: Integer,
-    required: true
+    type: Number,
+    // required: true
   },
   res: {
-    type: Integer,
-    required: true
+    type: Number,
+    // required: true
   },
   score: {
-    type: Integer,
-    required: true
+    type: Number,
+    // required: true
   },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 const User = mongoose.model('User', UserSchema);
