@@ -1,5 +1,5 @@
 # ExpLore
-
+https://ci.appveyor.com/api/projects/status/{{building}}
 
 ## Technologies 
 
