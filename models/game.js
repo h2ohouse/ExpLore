@@ -41,3 +41,5 @@ const GameSchema = new Schema({
 const Game = mongoose.model('Game', GameSchema);
 
 module.exports = Game;
+
+// images from http://pixeljoint.com/forum/forum_posts.asp?TID=21493

@@ -1,0 +1,40 @@
+    //    might need to change lat and long to string data type in game.js folder,
+
+[
+    {
+       "name": "Clark Planetarium",
+       "lat": "40.7670° N",
+        "long": "111.9029° W",
+        "travelTime": 60,
+        "monsterName": "Sammie Wilkinson",
+        "monsterImage": "",
+        "monsterHP": 16
+    },
+    {
+        "name": "Temple Square",
+        "lat": "40.7707° N",
+         "long": "111.8911° W",
+         "travelTime": 60,
+         "monsterName": "Brian Wilanoski",
+         "monsterImage": "",
+         "monsterHP": 32
+     },
+     {
+        "name": "Salt Lake City Public Library",
+        "lat": "40.7599° N",
+         "long": "111.8849° W",
+         "travelTime": 60,
+         "monsterName": "Frank",
+         "monsterImage": "",
+         "monsterHP": 64
+     },
+     {
+        "name": "Gallivan Center",
+        "lat": "40.7644° N",
+         "long": "111.8896° W",
+         "travelTime": 60,
+         "monsterName": "Willie Freeman",
+         "monsterImage": "",
+         "monsterHP": 128
+     }
+]
