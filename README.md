@@ -13,3 +13,5 @@
 * [create-react-app](https://www.npmjs.com/package/create-react-app)
 * [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 * [Mongoose](https://www.npmjs.com/package/mongoose)
+* [React-countdown-now](https://www.npmjs.com/package/react-countdown-now)
+* [NPM Update](https://docs.npmjs.com/cli/update.html)
