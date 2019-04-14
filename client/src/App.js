@@ -16,7 +16,9 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/register" component={Register}/>
+
           <Route exact path="/login" component={Login}/>
+
         </Switch>
         
       </div>
@@ -52,3 +54,4 @@ class App extends Component {
 // }
 
 export default App;
+
