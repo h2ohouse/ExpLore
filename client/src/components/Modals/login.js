@@ -21,7 +21,8 @@ class Login extends React.Component {
 
     this.state = {
       show: false,
-      validated: false
+      validated: false,
+      
     };
   }
 
@@ -78,7 +79,7 @@ class Login extends React.Component {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="text" placeholder="Password" required />
                 <Form.Control.Feedback type="invalid" controlId="passwordCheck">
-                  Must be over 6 characters long
+                  invalid Password
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>

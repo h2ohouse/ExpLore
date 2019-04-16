@@ -1,12 +1,8 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import API from "../../utils/API"
 // import Form from "react-bootstrap/Form";
-import { Col, Form } from "react-bootstrap";
-// import ModalHeader from 'react-bootstrap/ModalHeader';
-// import ModalTitle from 'react-bootstrap/ModalTitle';
-// import ModalFooter from 'react-bootstrap/ModalFooter';
-// import ModalBody from 'react-bootstrap/ModalBody'
+import { Col, Form, Modal, Button } from "react-bootstrap";
+
 
 // const {Formik} = formik;
 var styles = {
@@ -21,7 +17,13 @@ class Register extends React.Component {
 
     this.state = {
       show: false,
-      validated: false
+      validated: false,
+      name: "",
+      email: "",
+      password: "",
+      password2: "",
+
+
     };
   }
 
@@ -33,15 +35,30 @@ class Register extends React.Component {
     this.setState({ show: true });
   }
 
-  handleSubmit(event) {
+  handleSubmit = event => {
+    console.log("i clicked", event);
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
     this.setState({ validated: true });
+    API.registerUser({
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
+      
+    })
   }
 
+  handleInputChanges = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+
+  }
   render() {
     const { validated } = this.state;
     return (
@@ -66,7 +83,10 @@ class Register extends React.Component {
                 <Form.Control
                   required
                   type="text"
+                  onChange={this.handleInputChanges}
                   placeholder="Character Name"
+                  name="name"
+                  value={this.state.name}
                 />
                 <Form.Control.Feedback
                   type="invalid"
@@ -78,7 +98,14 @@ class Register extends React.Component {
               </Form.Group>
               <Form.Group as={Col} md="4" controlId="email">
                 <Form.Label>Email Address</Form.Label>
-                <Form.Control required type="email" placeholder="Email" />
+                <Form.Control 
+                  required 
+                  type="email"
+                  placeholder="Email"
+                  onChange={this.handleInputChanges}
+                  name="email"
+                  value={this.state.email}
+                  />
                 <Form.Control.Feedback
                   type="invalid"
                   controlId="emailValidation"
@@ -91,7 +118,14 @@ class Register extends React.Component {
             <Form.Row>
               <Form.Group as={Col} md="6" controlId="password">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="text" placeholder="Password" required />
+                <Form.Control 
+                  type="text"
+                  placeholder="Password" 
+                  required
+                  onChange={this.handleInputChanges}
+                  name="password"
+                  value={this.state.password}
+                   />
                 <Form.Control.Feedback type="invalid" controlId="passwordCheck">
                   Must be over 6 characters long
                 </Form.Control.Feedback>
@@ -102,6 +136,9 @@ class Register extends React.Component {
                   type="text"
                   placeholder="Re-Enter Password"
                   required
+                  onChange={this.handleInputChanges}
+                  name="password2"
+                  value={this.state.password2}
                 />
                 <Form.Control.Feedback type="invalid" controlId="passwordCheck">
                   Must be over 6 characters long
@@ -115,48 +152,6 @@ class Register extends React.Component {
       </div>
     );
   }
-  // render() {
-  //   return (
-  //     <div>
-  //       <Button variant="primary" onClick={this.handleShow}>
-  //         Launch demo modal
-  //         </Button>
-  //       <Modal size="lg" show={this.state.show} animation={false} onHide={this.handleClose}>
-  //         <Modal.Header closeButton>
-  //           <Modal.Title>Modal heading</Modal.Title>
-  //         </Modal.Header>
-  //         <Modal.Body>
-  //           <Form>
-  //             <Form.Group controlId="formGroupUserName">
-  //               <Form.Label>Character's Name</Form.Label>
-  //               <Form.Control type="username" placeholder="Sir Greatness" />
-  //             </Form.Group>
-  //             <Form.Group controlId="formGroupEmail">
-  //               <Form.Label>Email address</Form.Label>
-  //               <Form.Control type="email" placeholder="Enter email" />
-  //             </Form.Group>
-  //             <Form.Group controlId="formGroupPassword">
-  //               <Form.Label>Password</Form.Label>
-  //               <Form.Control type="password" placeholder="Password" />
-  //             </Form.Group>
-  //             <Form.Group controlId="formGroupPassword">
-  //               <Form.Label>Re-Enter Password</Form.Label>
-  //               <Form.Control type="password2" placeholder="Password" />
-  //             </Form.Group>
-  //           </Form>
-  //         </Modal.Body>
-  //         <Modal.Footer>
-  //           <Button variant="secondary" onClick={this.handleClose}>
-  //             Close
-  //             </Button>
-  //           <Button variant="primary" onClick={this.handleClose}>
-  //             Save Changes
-  //             </Button>
-  //         </Modal.Footer>
-  //       </Modal>
-  //     </div>
-  //   );
-  // }
 }
 
 export default Register;
