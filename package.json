@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "google-maps-react": "^2.0.2",
     "mongoose": "^5.5.0",
     "react": "^16.8.6",
     "react-countdown-now": "^2.1.0",
