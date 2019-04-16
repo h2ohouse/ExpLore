@@ -9,12 +9,12 @@ const GameSchema = new Schema({
   },
     // location marker
   lat: {
-    type: Number,
+    type: String,
     required: true
   },
     // location marker
   long: {
-    type: Number,
+    type: String,
     required: true
   },
     //time allowed to move between locations   

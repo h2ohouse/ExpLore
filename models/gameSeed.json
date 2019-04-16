@@ -1,5 +1,3 @@
-    //    might need to change lat and long to string data type in game.js folder,
-
 [
     {
        "name": "Clark Planetarium",
@@ -24,7 +22,7 @@
         "lat": "40.7599° N",
          "long": "111.8849° W",
          "travelTime": 60,
-         "monsterName": "Frank",
+         "monsterName": "Bobby Corwin",
          "monsterImage": "",
          "monsterHP": 64
      },
