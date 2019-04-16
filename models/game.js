@@ -9,17 +9,17 @@ const GameSchema = new Schema({
   },
     // location marker
   lat: {
-    type: Integer,
+    type: Number,
     required: true
   },
     // location marker
   long: {
-    type: Integer,
+    type: Number,
     required: true
   },
     //time allowed to move between locations   
   travelTime: {
-    type: Integer,
+    type: Number,
     required: true
   },
   monsterName: {
@@ -33,7 +33,7 @@ const GameSchema = new Schema({
   },
 //   Monster hp needs to be seeded as 16,32,64,128
   monsterHP: {
-    type: Integer,
+    type: Number,
     required: true
   },
 });
