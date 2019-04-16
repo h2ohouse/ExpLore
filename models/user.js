@@ -19,6 +19,11 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  loggedin: {
+    type: Boolean,
+    default: false
+
+  },
   lives: {
     type: Number,
     // required: true
