@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css';
 
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
-import Checkin from './components/Checkin';
+// import Checkin from './components/Checkin';
 import Timer from './components/Timer';
+import Info from './components/Info';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
       <div>
         <Jumbotron />
         <Navbar />
-        <Checkin />
+        <Info />
         <Timer />
       </div>
     )
