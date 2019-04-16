@@ -16,7 +16,7 @@ class Register extends React.Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false,
+      show: true,
       validated: false,
       name: "",
       email: "",
@@ -63,9 +63,7 @@ class Register extends React.Component {
     const { validated } = this.state;
     return (
       <div style={styles}>
-        <Button variant="primary" onClick={this.handleShow}>
-          Launch demo modal
-        </Button>
+
         <Modal
           size="lg"
           show={this.state.show}
@@ -145,8 +143,8 @@ class Register extends React.Component {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button type="submit">Submit form</Button>
-            <Button type="submit">Already Registered</Button>
+            <Button type="submit" onClick={this.handleClose}>Submit form</Button>
+            
           </Form>
         </Modal>
       </div>
