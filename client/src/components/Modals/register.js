@@ -143,7 +143,7 @@ class Register extends React.Component {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button type="submit" onClick={this.handleClose}>Submit form</Button>
+            <Button type="submit" >Submit form</Button>
             
           </Form>
         </Modal>
