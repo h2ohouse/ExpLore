@@ -5,7 +5,7 @@ const routes = require("./routes/api/users");
 const app = express();
 const passport = require("passport");
 var logger = require("morgan");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamedb";

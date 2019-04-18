@@ -33,7 +33,7 @@ export class Checkin extends React.Component {
                 <Marker onReady={this.onReady}
                     name={'Current location'} />
             </Map>
-        )
+        );
     };
 }
 
