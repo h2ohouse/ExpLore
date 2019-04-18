@@ -25,13 +25,16 @@
     "bootstrap": "^4.3.1",
     "concurrently": "^4.0.1",
     "express": "^4.16.4",
+    "google-maps-react": "^2.0.2",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.11",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
+    "react-dom": "^16.8.6",
     "validator": "^10.9.0"
   }
 }
