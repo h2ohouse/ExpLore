@@ -1,0 +1,38 @@
+[
+    {
+       "name": "Clark Planetarium",
+       "lat": "40.767000",
+        "lng": "-111.902900",
+        "travelTime": 60000,
+        "monsterName": "Sammie Wilkinson",
+        "monsterImage": "",
+        "monsterHP": 16
+    },
+    {
+        "name": "Temple Square",
+        "lat": "40.770700",
+         "long": "-111.891100",
+         "travelTime": 60000,
+         "monsterName": "Brian Willanoski",
+         "monsterImage": "",
+         "monsterHP": 32
+     },
+     {
+        "name": "Salt Lake City Public Library",
+        "lat": "40.759900",
+         "long": " -111.884900",
+         "travelTime": 60000,
+         "monsterName": "Bobby Corwin",
+         "monsterImage": "",
+         "monsterHP": 64
+     },
+     {
+        "name": "Gallivan Center",
+        "lat": "40.764400",
+         "long": "-111.889600",
+         "travelTime": 60000,
+         "monsterName": "Willie Freeman",
+         "monsterImage": "",
+         "monsterHP": 128
+     }
+]
