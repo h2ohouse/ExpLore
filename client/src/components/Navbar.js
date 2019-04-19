@@ -7,6 +7,7 @@ function Navbar(props) {
         <span className="navbar-brand mb-0 h1">Logo</span>
         <span className="navbar-brand mb-0 h1">Character:</span>
         <span className="navbar-brand mb-0 h1">Score:</span>
+
         <button className="btn btn-primary btn-md justify-content-md-end">
             <Link
             to="/login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
@@ -14,6 +15,7 @@ function Navbar(props) {
             Login
             </Link>
         </button>
+
         <button className="btn btn-primary btn-md justify-content-md-end">Logout</button>
     </nav>
     )
