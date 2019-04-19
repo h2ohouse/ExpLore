@@ -2,29 +2,35 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css';
 import Register from './components/Modals/register';
-import Login from './components/Modals/login'
+
+import Login from './components/Modals/login';
+
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
+import Info from './components/Info';
+import Timer from './components/Timer'
 
 class App extends Component {
   render() {
     return (
-      
+
       <Router>
-         <div>
-        <Jumbotron />
-        <Navbar />
-        <Switch>
-          <Route exact path="/register" component={Register}/>
 
-          <Route exact path="/login" component={Login}/>
+        <div>
+          <Jumbotron />
+          <Navbar />
+          <Switch>
+            <Route exact path="/register" component={Register} />
 
-        </Switch>
-        
-      </div>
+            <Route exact path="/login" component={Login} />
+          </Switch>
+          <Info />
+          <Timer />
+        </div>
+
 
       </Router>
-    
+
     )
   }
 }
