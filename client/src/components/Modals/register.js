@@ -36,10 +36,11 @@ class Register extends React.Component {
   }
 
   handleSubmit = event => {
+    var that = this;
     console.log("i clicked", event);
     const form = event.currentTarget;
+    event.preventDefault();
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
     }
     this.setState({ validated: true });
@@ -49,7 +50,10 @@ class Register extends React.Component {
       password: this.state.password,
       password2: this.state.password2
       
-    })
+    }).then(function(data){
+      console.log(data);
+      that.handleClose();
+    });
   }
 
   handleInputChanges = event => {
