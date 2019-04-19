@@ -1,10 +1,19 @@
-import React from "react";
-import Monster from "monster.json"
+// import React from "react";
+// import Monster from "monsters.json"
 
-function Combat() {
-    return 
-    <Monster />
-    //The image/ stats of monster
-}
+// function Combat() {
+//     return (
+//         {
+//         this.state.monsters.map(monster => {
+//           return <ImageCard
+//             selectCard={this.selectCard}
+//             image={card.image}
+//             name={card.name}
+//             id={card.id}
+//           />
+//         })}
+//     )
+//     //The image/ stats of monster
+// }
 
-export default Combat;
+// export default Combat;

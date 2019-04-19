@@ -1,10 +1,12 @@
 import React from "react";
+// import Info from "./Info";
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 export class Checkin extends React.Component {
     state = { userLocation: { lat: 32, lng: 32 }, loading: true };
 
-    componentDidMount(props) {
+    componentDidMount(props, marker, e) {
+
         navigator.geolocation.getCurrentPosition(
             position => {
                 const { latitude, longitude } = position.coords;
@@ -24,6 +26,7 @@ export class Checkin extends React.Component {
         const { loading, userLocation } = this.state;
         const { google } = this.props;
 
+
         if (loading) {
             return null;
         }
@@ -34,9 +37,11 @@ export class Checkin extends React.Component {
                     name={'Current location'} />
             </Map>
         );
+
     };
 }
 
 export default GoogleApiWrapper({
     apiKey: "AIzaSyBY2MMkLEfuCTnKO_iUgyw2HMQLoPqfzLg"
-})(Checkin);
+
+})(Checkin); 

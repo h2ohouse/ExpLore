@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css';
 import Register from './components/Modals/register';
+
 import Login from './components/Modals/login';
+
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
 import Info from './components/Info';
@@ -13,6 +15,7 @@ class App extends Component {
     return (
 
       <Router>
+
         <div>
           <Jumbotron />
           <Navbar />
@@ -24,6 +27,7 @@ class App extends Component {
           <Info />
           <Timer />
         </div>
+
 
       </Router>
 
@@ -56,3 +60,4 @@ class App extends Component {
 // }
 
 export default App;
+
