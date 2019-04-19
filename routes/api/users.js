@@ -17,18 +17,18 @@ const User = require("../../models/user");
 // @access Public
 router.post("/register", (req, res) => {
   // Form validation
-  console.log(res)
+  console.log("user.js ln 20", req.body)
   const { errors, isValid } = validateRegisterInput(req.body);
-
+  console.log("error ", errors, "isValid ",typeof{isValid});
   // Check validation
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
-
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
-      return res.status(400).json({ email: "Email already exists" });
+      console.log("ln 30",user);
+      return res.status(200).json({ email: "Email already exists" });
     } else {
       const newUser = new User({
         name: req.body.name,
@@ -45,6 +45,7 @@ router.post("/register", (req, res) => {
             .save()
             .then(user => res.json(user))
             .catch(err => console.log(err));
+            console.log(user);
         });
       });
     }

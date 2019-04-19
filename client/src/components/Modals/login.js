@@ -1,16 +1,12 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-// import Form from "react-bootstrap/Form";
-import { Col, Form } from "react-bootstrap";
-// import ModalHeader from 'react-bootstrap/ModalHeader';
-// import ModalTitle from 'react-bootstrap/ModalTitle';
-// import ModalFooter from 'react-bootstrap/ModalFooter';
-// import ModalBody from 'react-bootstrap/ModalBody'
+import { Link } from "react-router-dom";
+import { Col, Form, Modal, Button } from "react-bootstrap";
 
-// const {Formik} = formik;
+
+
 var styles = {
-  margin: "10px"
+  margin: "10px",
+  
 };
 class Login extends React.Component {
   constructor(props, context) {
@@ -20,8 +16,9 @@ class Login extends React.Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false,
-      validated: false
+      show: true,
+      validated: false,
+      
     };
   }
 
@@ -46,9 +43,7 @@ class Login extends React.Component {
     const { validated } = this.state;
     return (
       <div style={styles}>
-        <Button variant="primary" onClick={this.handleShow}>
-          Launch demo modal
-        </Button>
+        
         <Modal
           size="lg"
           show={this.state.show}
@@ -78,11 +73,18 @@ class Login extends React.Component {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="text" placeholder="Password" required />
                 <Form.Control.Feedback type="invalid" controlId="passwordCheck">
-                  Must be over 6 characters long
+                  invalid Password
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
             <Button type="submit">Login</Button>
+            <Button>
+            <Link
+            to="/register" style={this.style} className={window.location.pathname === "/register" ? "nav-link active" : "nav-link"} 
+            >
+            New User Registration
+            </Link>
+            </Button>
           </Form>
         </Modal>
       </div>
