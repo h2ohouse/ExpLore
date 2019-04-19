@@ -6,6 +6,7 @@ import Login from './components/Modals/login';
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
 import Info from './components/Info';
+import Timer from './components/Timer';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
           </Switch>
           <Info />
+          <Timer />
         </div>
 
       </Router>
