@@ -2,27 +2,65 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css';
 import Register from './components/Modals/register';
-import Login from './components/Modals/login'
+import Login from './components/Modals/login';
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
-
+import Info from './components/Info';
+import Timer from './components/Timer'
+import API from "./utils/API"
 class App extends Component {
+  state ={
+    character: "",
+    userId: ""
+  }
+  
+   
+   sendUserToApp= (id) =>{
+     this.setState({userId: id});
+     const that = this;
+     console.log(id);
+     API.CharacterName(id).then(function(response){
+       console.log(response.data.name)
+       let character = response.data.name;
+      that.setState({character: character});
+    })
+   }
   render() {
     return (
-      
+
       <Router>
-         <div>
-        <Jumbotron />
-        <Navbar />
-        <Switch>
-          <Route exact path="/register" component={Register}/>
-          <Route exact path="/login" component={Login}/>
-        </Switch>
-        
-      </div>
+        <div>
+          <Jumbotron />
+          <Navbar
+            characterName={this.state.character}
+            />
+          <Switch >
+            <Route 
+              exact path="/register" 
+              render={(props) =>
+                <Register
+                  {...props}
+                  sendUserToApp={this.sendUserToApp}
+                />
+              }
+               />
+              
+            <Route
+              exact path='/login'
+              render={(props) =>
+                <Login
+                  {...props}
+                  sendUserToApp={this.sendUserToApp}
+                />
+              }
+            />
+          </Switch>
+          <Info />
+          <Timer />
+        </div>
 
       </Router>
-    
+
     )
   }
 }

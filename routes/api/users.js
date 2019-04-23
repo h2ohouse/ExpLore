@@ -12,6 +12,18 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/user");
 
+// @route GET api/users/ChacterName
+// @access Public
+
+router.get("/character/:id", (req, res) =>{
+  console.log(res);
+  User.findById({_id: req.params.id }).then(user => {
+      console.log(user);
+      res.json(user)
+   
+  })
+  .catch(err => res.status(422).json(err));
+})
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -55,9 +67,9 @@ router.post("/register", (req, res) => {
 // @route POST api/users/login
 // @desc Login user and return JWT token
 // @access Public
-router.post("/login", (req, res) => {
+router.put("/login", (req, res) => {
   // Form validation
-
+  console.log("user.js ln 60", req.body)
   const { errors, isValid } = validateLoginInput(req.body);
 
   // Check validation
@@ -70,6 +82,7 @@ router.post("/login", (req, res) => {
 
   // Find user by email
   User.findOne({ email }).then(user => {
+    // console.log(user);
     // Check if user exists
     if (!user) {
       return res.status(404).json({ emailnotfound: "Email not found" });
@@ -79,10 +92,16 @@ router.post("/login", (req, res) => {
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         // User matched
+        console.log(user.email, user.loggedin);
+        User.findByIdAndUpdate({_id: user._id},{loggedin: true}).then(function(){
+          // res.json(user);
+          console.log('line 98', user);
+        })
+        
         // Create JWT Payload
         const payload = {
           id: user.id,
-          name: user.name
+          name: user.name,
         };
 
         // Sign token
@@ -94,9 +113,13 @@ router.post("/login", (req, res) => {
           },
           (err, token) => {
             res.json({
+              userId: user._id,
               success: true,
-              token: "Bearer " + token
+              token: "Bearer " + token,
+              
             });
+            console.log(token)
+            
           }
         );
       } else {
