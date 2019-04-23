@@ -1,5 +1,8 @@
 import React from "react";
 import Checkin from "./Checkin";
+import Wrapper from "./Wrapper";
+import Location from "./Location.js";
+import data from "../game.json";
 
 class Info extends React.Component {
     constructor(props) {
@@ -15,9 +18,14 @@ class Info extends React.Component {
         // if state gameStart is true, load Checkin component.
         const gameStart = this.state.gameStart;
         if (gameStart) {
-            return <div>
+            return (
+            <Wrapper>
                 <Checkin />
-            </div>
+                {data.map(game=>{
+                    return <Location key={game.i} name={game.name} monster={game.monsterName} image={game.monsterImage} location={game.location} />
+                })}
+            </Wrapper>
+            )
         } else {
             return <div className="card text-center">
                 {/* <img className="card-img-top" src="..." alt="Location"></img> */}
