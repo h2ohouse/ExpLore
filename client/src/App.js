@@ -18,6 +18,7 @@ class App extends Component {
     email: "",
     password: "",
     password2: "",
+    score: ""
 
   }
   
@@ -46,6 +47,7 @@ class App extends Component {
           <Jumbotron />
           <Navbar
             characterName={this.state.character}
+            userScore={this.state.score}
             />
           <Switch >
             <Route 
