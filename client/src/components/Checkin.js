@@ -16,6 +16,8 @@ export class Checkin extends React.Component {
                     userLocation: { lat: latitude, lng: longitude },
                     loading: false
                 });
+                // Call function
+                this.props.passUpCoordinates({ lat: latitude, lng: longitude })
             },
             () => {
                 this.setState({ loading: false });
@@ -27,8 +29,10 @@ export class Checkin extends React.Component {
         const { loading, userLocation } = this.state;
         const { google } = this.props;
         const style = {
-            width: '40%',
-            height: '100%'
+            display: 'block',
+            margin: '0 auto', 
+            width: '60%',
+            height: '50%'
         }
 
         if (loading) {
@@ -42,6 +46,7 @@ export class Checkin extends React.Component {
                         name={'Current location'} />
                 </Map>
             </div>
+
         );
 
     };

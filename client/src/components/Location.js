@@ -5,14 +5,17 @@ function Location(props) {
     <div className="card">
       <div className="img-container">
         <img
-          alt={props.monsterName}
-          src={props.monsterImage}
+          alt={props.name}
+          src={props.image}
         />
       </div>
       <div className="content">
         <ul>
           <li>
-            <strong>Location:</strong> {props.name};
+            <strong>Location:</strong> {props.name}
+          </li>
+          <li>
+            <strong>Foe:</strong> {props.monster}
           </li>
         </ul>
       </div>

@@ -8,8 +8,8 @@ import Login from './components/Modals/login';
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
 import Info from './components/Info';
-import Timer from './components/Timer'
-
+import Timer from './components/Timer';
+import Checkin from './components/Checkin'
 class App extends Component {
   render() {
     return (
@@ -21,10 +21,12 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/register" component={Register} />
-
+            <Route exact path='/map' component={Checkin} />
+            <Route exact path='/info' component={Info} />
             <Route exact path="/login" component={Login} />
           </Switch>
           <Info />
+          
           <Timer />
         </div>
 

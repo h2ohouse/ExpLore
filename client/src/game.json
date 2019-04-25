@@ -1,38 +1,50 @@
 [
     {
-       "name": "Clark Planetarium",
-       "lat": "40.767000",
-        "lng": "-111.902900",
+        "id": "1",
+        "name": "Clark Planetarium",
+        "location": {
+            "lat": "40.7653269  ",
+            "lng": "-111.8404281"
+        },
         "travelTime": 60,
         "monsterName": "Sammie Wilkinson",
         "monsterImage": "https://raw.githubusercontent.com/gudolph/ExpLore/master/models/images/Sammie%20Wilkinson.gif",
         "monsterHP": 16
     },
     {
+        "id": "2",
         "name": "Temple Square",
-        "lat": "40.770700",
-         "long": "-111.891100",
-         "travelTime": 60,
-         "monsterName": "Brian Wilanoski",
-         "monsterImage": "https://raw.githubusercontent.com/gudolph/ExpLore/master/models/images/Brian%20Willanoski.gif",
-         "monsterHP": 32
-     },
-     {
+        "location": {
+            "lat": "40.770700",
+            "long": "-111.891100"
+        },
+        "travelTime": 60,
+        "monsterName": "Brian Wilanoski",
+        "monsterImage": "https://raw.githubusercontent.com/gudolph/ExpLore/master/models/images/Brian%20Willanoski.gif",
+        "monsterHP": 32
+    },
+    {
+        "id": "3",
         "name": "Salt Lake City Public Library",
-        "lat": "40.759900",
-         "long": " -111.884900",
-         "travelTime": 60,
-         "monsterName": "Bobby Corwin",
-         "monsterImage": "https://raw.githubusercontent.com/gudolph/ExpLore/master/models/images/Bobby%20Corwin.gif",
-         "monsterHP": 64
-     },
-     {
+        "location": {
+            "lat": "40.759900",
+            "long": " -111.884900"
+        },
+        "travelTime": 60,
+        "monsterName": "Bobby Corwin",
+        "monsterImage": "https://raw.githubusercontent.com/gudolph/ExpLore/master/models/images/Bobby%20Corwin.gif",
+        "monsterHP": 64
+    },
+    {   
+        "id":"4",
         "name": "Gallivan Center",
-        "lat": "40.764400",
-         "long": "-111.889600",
-         "travelTime": 60,
-         "monsterName": "Willie Freeman",
-         "monsterImage": "https://github.com/gudolph/ExpLore/blob/master/models/images/Willie%20Freeman.gif",
-         "monsterHP": 128
-     }
+        "location": {
+            "lat": "40.764400",
+            "long": "-111.889600"
+        },
+        "travelTime": 60,
+        "monsterName": "Willie Freeman",
+        "monsterImage": "https://github.com/gudolph/ExpLore/blob/master/models/images/Willie%20Freeman.gif",
+        "monsterHP": 128
+    }
 ]
