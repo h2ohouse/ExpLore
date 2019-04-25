@@ -14,6 +14,7 @@ class Login extends React.Component {
       validated: false,
       email: "",
       password: "",
+      password2: "",
       userId: ""
     };
   }
@@ -22,7 +23,7 @@ class Login extends React.Component {
     this.setState({ show: false });
   }
 
-  handleShow() {
+  handleShow(){
     this.setState({ show: true });
   }
 
@@ -56,12 +57,19 @@ class Login extends React.Component {
 
   render() {
     const { validated } = this.state;
+    
     return (
+      
+     
       <div style={{ padding: "10px" }}>
+
+{/* <Button variant="primary" onClick={this.handleShow}>
+      Launch demo modal
+    </Button> */}
         <Modal
           size="lg"
           show={this.state.show}
-          animation={false}
+          animation={false} 
           onHide={this.handleClose}
         >
           <div

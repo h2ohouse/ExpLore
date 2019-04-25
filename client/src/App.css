@@ -22,7 +22,82 @@
 .App-link {
   color: #61dafb;
 }
+/* .logo{
+  border-style: solid !important;
+  border-color: #8E8269 !important;
+  background-color: #AAA0a0; 
+  float: left;
+  margin-right: 10px;
 
+  
+} */
+/* img{
+  float: left;
+  border-style: solid;
+  border-color: #8E8269 !important;
+  background-color: #AAA0a0; 
+  margin-right: 10px;
+
+
+} */
+
+.nav-bar{
+  border: solid !important ;
+  border-color: #8E8269 !important;
+  background-color: #86b3d1 !important;
+  padding: 5px;
+  
+}
+span, button, .form-modal .jumbotron, h1{
+  font-family: 'Press Start 2P' !important;
+  background-color: '#474853';
+  color: white
+  
+}
+span{
+  color:black
+}
+.jumbo-text{
+  padding-top: 18px !important;
+  color: white !important
+  
+}
+.logo, img{
+  border-style: solid !important;
+  border-color: #8E8269 !important;
+  background-color: #AAA0a0; 
+  float: left;
+  margin-right: 10px;
+
+  
+}
+.jumbotron{
+  background-color: #844d36;
+  margin: 0px;
+}
+.navbar, .char-score{
+  display:flex;
+  flex-direction: column;
+  align-content: flex-start
+}
+.navbar-brand{
+  margin: 0px;
+  padding: 0px;
+  height: 25px;
+  width: 50%;
+
+}
+.login-out-btns{
+  display: flex; 
+  flex-direction: row;
+  align-items: flex-end;
+  justify-items: right;
+
+}
+.btn{
+ height:50%;
+ margin: 4px
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

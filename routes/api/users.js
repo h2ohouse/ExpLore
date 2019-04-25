@@ -16,7 +16,7 @@ const User = require("../../models/user");
 // @access Public
 
 router.get("/character/:id", (req, res) =>{
-  console.log(res);
+  //console.log(res);
   User.findById({_id: req.params.id }).then(user => {
       console.log(user);
       res.json(user)
@@ -29,7 +29,7 @@ router.get("/character/:id", (req, res) =>{
 // @access Public
 router.post("/register", (req, res) => {
   // Form validation
-  console.log("user.js ln 20", req.body)
+  // console.log("user.js ln 20", req.body)
   const { errors, isValid } = validateRegisterInput(req.body);
   console.log("error ", errors, "isValid ",typeof{isValid});
   // Check validation
@@ -39,7 +39,7 @@ router.post("/register", (req, res) => {
 
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
-      console.log("ln 30",user);
+      //console.log("ln 30",user);
       return res.status(200).json({ email: "Email already exists" });
     } else {
       const newUser = new User({
@@ -57,7 +57,7 @@ router.post("/register", (req, res) => {
             .save()
             .then(user => res.json(user))
             .catch(err => console.log(err));
-            console.log(user);
+            //console.log(user);
         });
       });
     }

@@ -10,7 +10,7 @@ import Login from "./login";
 class Register extends React.Component {
   constructor(props, context) {
     super(props, context);
-
+    
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
 
@@ -33,9 +33,13 @@ class Register extends React.Component {
     this.setState({ show: true });
   }
 
+  routeChange(){
+    let path = "/login";
+    this.props.history.push(path)
+  }
+
   handleSubmit = event => {
     var that = this;
-    console.log("i clicked", event);
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
@@ -47,11 +51,18 @@ class Register extends React.Component {
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
-    }).then(function(user) {
+    }).then(function (user) {
+      //set returned userId from API call
       that.setState({ userId: user.data.userId });
+      //send the userID up to the APP.js Parent Page
       that.props.sendUserToApp(user.data.userId);
-      that.handleClose();
+
+      //
+      //that.handleClose();
+      that.routeChange();
     });
+
+    console.log(this.state.userId);
   };
 
   handleInputChanges = event => {
@@ -60,6 +71,7 @@ class Register extends React.Component {
       [name]: value
     });
   };
+
   render() {
     const { validated } = this.state;
     return (
@@ -156,7 +168,8 @@ class Register extends React.Component {
                   </Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
-              <Button type="submit">Submit form</Button>
+              <Button type="submit"
+              >Submit form</Button>
             </Form>
           </div>
         </Modal>
