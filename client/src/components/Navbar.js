@@ -12,7 +12,9 @@ function Navbar(props) {
   //     })
 
   // }
-
+  // logoutUser = (id) =>{
+  //   console.log(id)
+  // }
   return (
     <nav className="navbar navbar-light bg-light nav-bar">
       {/* <div className='logo'>

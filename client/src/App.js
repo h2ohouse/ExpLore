@@ -67,7 +67,12 @@ class App extends Component {
                   onClick={this.handleshow}
                   sendUserToApp={this.sendUserToApp}
                   handleShowModal={this.handleShowModal}
+                  character={this.character}
+                  validated={this.validated}
+                  show={this.show}
+                  email={this.email}
                   password={this.password}
+                  password2={this.password2}
                 />
               }
             />

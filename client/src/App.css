@@ -67,12 +67,13 @@ span{
   border-color: #8E8269 !important;
   background-color: #AAA0a0; 
   float: left;
+  border: 4px;
   margin-right: 10px;
 
   
 }
 .jumbotron{
-  background-color: #844d36;
+  background-color: #474853;
   margin: 0px;
 }
 .navbar, .char-score{
@@ -89,14 +90,23 @@ span{
 }
 .login-out-btns{
   display: flex; 
-  flex-direction: row;
-  align-items: flex-end;
-  justify-items: right;
+  justify-content: right; 
+  margin-left: 5px
+  
+  /* justify-items: right !important; */
+  
 
 }
 .btn{
- height:50%;
- margin: 4px
+ 
+ margin: 4px;
+ background-color: #844d36
+}
+a{
+  color:white
+}
+.modal{
+  opacity: 98%
 }
 @keyframes App-logo-spin {
   from {

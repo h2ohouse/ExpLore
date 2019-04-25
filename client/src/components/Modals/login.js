@@ -45,9 +45,14 @@ class Login extends React.Component {
       that.setState({ userId: user.data.userId });
       that.props.sendUserToApp(user.data.userId);
       that.handleClose();
+      that.routeChange();
+      
     });
   }
-
+  routeChange(){
+    let path = "/";
+    this.props.history.push(path)
+  }
   handleInputChanges = event => {
     const { name, value } = event.target;
     this.setState({
@@ -71,6 +76,7 @@ class Login extends React.Component {
           show={this.state.show}
           animation={false} 
           onHide={this.handleClose}
+          
         >
           <div
             className="form-modal"

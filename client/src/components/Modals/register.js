@@ -168,8 +168,10 @@ class Register extends React.Component {
                   </Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
+             
               <Button type="submit"
               >Submit form</Button>
+              
             </Form>
           </div>
         </Modal>
