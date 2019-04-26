@@ -12,14 +12,14 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
         return <Completionist />;
     } else {
         // Render a countdown
-        return <span>{hours}:{minutes}:{seconds}</span>;
+        return <span>{hours} hours, {minutes} minutes, and {seconds} seconds left</span>;
     }
 };
 
 function Timer() {
     return (
         <Countdown
-            date={Date.now() + 525600000}
+            date = 'April 27 2019 14:00:00 GMT-0600'
             renderer={renderer}
         />
     )

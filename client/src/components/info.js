@@ -37,6 +37,7 @@ class Info extends React.Component {
             return (
                 <Wrapper>
                     <div>
+                    <Checkin passUpCoordinates={this.passUpCoordinates} />
                         {data.map((game) => {
                             const condition = (((((parseFloat(coord.lat) - parseFloat(game.location.lat)) < .01) || ((parseFloat(coord.lat) - parseFloat(game.location.lat)) > -.01))
                                 ||
@@ -55,46 +56,34 @@ class Info extends React.Component {
                                 counter++;
                                 console.log(counter);
                             }
-                            console.log("Condition met? " + condition);
-                            console.log("Latitude close enough? " + (parseFloat(coord.lat) - parseFloat(game.location.lat)));
-
                         })
                         }
-                        <Checkin passUpCoordinates={this.passUpCoordinates} />
                     </div>
                 </Wrapper>
             )
-        } else if (counter >= 4) {
+        } else if (counter == 4) {
             return (
+                counter = 0,
                 console.log(counter),
-                data.map((game) => {
-                    const condition = (((((parseFloat(coord.lat) - parseFloat(game.location.lat)) < .1) && ((parseFloat(coord.lat) - parseFloat(game.location.lat)) > -.1))
-                        ||
-                        (((parseFloat(game.location.lat) - parseFloat(coord.lat)) < .001) && (parseFloat(game.location.lat) - parseFloat(coord.lat)) > -.001))
-                        &&
-                        ((((parseFloat(game.location.lng) - parseFloat(coord.lng)) < .001) && (parseFloat(game.location.lng) - parseFloat(coord.lng)) > -.001)
-                            ||
-                            (((parseFloat(coord.lng) - parseFloat(game.location.lng)) < .001) && (parseFloat(coord.lng) - parseFloat(game.location.lng)) > -.001)
-                        ));
-
-
-                    console.log("Condition met? " + condition)
-                    console.log("Latitude close enough? " + ((((parseFloat(coord.lat) - parseFloat(game.location.lat)) < .01) && ((parseFloat(coord.lat) - parseFloat(game.location.lat)) > -.01))))
-                }),
+                
+                <div className="card text-center">
+                <div className="card-body"></div>
                 < div className="card-body" >
-                    <h5 className="card-title">Get going!</h5>
-                    <p className="card-text">Keep going to the next location!</p>
-                    <button className="btn btn-primary" onClick={this.handleStartClick}>Check In Again</button>
-                    <Checkin passUpCoordinates={this.passUpCoordinates} />
+                    <h5 className="card-title">Keep ExpLoring!</h5>
+                    <p className="card-text">Your first task is to travel to</p>
+                    
+                    <button className="btn btn-primary" onClick={this.handleStartClick}>Check In</button>
+                    {/* <Checkin passUpCoordinates={this.passUpCoordinates} /> */}
+                </div >
                 </div >
 
             )
         } else {
             return <div className="card text-center">
                 <div className="card-body">
-                    <h5 className="card-title">Get going!</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button className="btn btn-primary" onClick={this.handleStartClick}>Check In</button>
+                    <h5 className="card-title">Welcome, ExpLorers!</h5>
+                    <p className="card-text">The adventure begins in </p>
+                    <button className="btn btn-primary" onClick={this.handleStartClick}>Begin your quest!</button>
                 </div>
             </div>
         }
