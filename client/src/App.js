@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css';
 import Register from './components/Modals/register';
+
 import Login from './components/Modals/login';
+
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
 import Info from './components/Info';
 import Timer from './components/Timer'
+
 import API from "./utils/API"
+
 class App extends Component {
 
   state ={
@@ -78,6 +82,7 @@ class App extends Component {
                 />
               }
             />
+
           </Switch>
           <Info />
           <Timer />
@@ -91,3 +96,4 @@ class App extends Component {
 
 
 export default App;
+

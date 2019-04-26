@@ -38,6 +38,7 @@ function Navbar(props) {
       </button>
         </div>
       </div>
+
     </nav>
   );
 }
