@@ -1,4 +1,3 @@
-
 import React from "react";
 import Checkin from "./Checkin";
 import Wrapper from "./Wrapper";
@@ -50,8 +49,8 @@ class Info extends React.Component {
                             if (condition) {
                                 return (
                                     console.log(game.name, game.location.lat, game.location.lng),
-                                    <Location key={game.id} name={game.name} monster={game.monsterName} image={game.monsterImage} lat={game.location.lat} lng={game.location.lng} />
-                                )
+                                    <Location key={game.id} name={game.name} monster={game.monsterName} image={game.monsterImage} lat={game.location.lat} lng={game.location.lng}  />                                    
+                                    )
                             } else {
                                 counter++;
                                 console.log(counter);
