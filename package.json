@@ -1,12 +1,15 @@
 {
   "name": "finalproject",
   "version": "0.1.0",
+  "engines": {
+    "node": "10.15.3"
+  },
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
@@ -25,15 +28,15 @@
     "bootstrap": "^4.3.1",
     "concurrently": "^4.0.1",
     "express": "^4.16.4",
+    "google-maps-react": "^2.0.2",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.3.0",
+    "mongodb": "^3.2.3",
     "mongoose": "^5.5.1",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "react-bootstrap": "^1.0.0-beta.8",
-    "validator": "^10.9.0",
-    "google-maps-react": "^2.0.2"
-
+    "validator": "^10.9.0"
   }
 }
