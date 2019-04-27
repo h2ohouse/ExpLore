@@ -49,14 +49,6 @@ class App extends Component {
       <Router>
         <div>
           <Jumbotron />
-<<<<<<< HEAD
-          <Navbar />
-          <Switch>
-            <Route exact path="/register" component={Register} />
-            <Route exact path='/map' component={Checkin} />
-            <Route exact path='/info' component={Info} />
-            <Route exact path="/login" component={Login} />
-=======
           <Navbar
             characterName={this.state.character}
             userScore={this.state.score}
@@ -91,7 +83,6 @@ class App extends Component {
               }
             />
 
->>>>>>> origin/master
           </Switch>
           <Info />
           
