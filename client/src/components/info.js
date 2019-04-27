@@ -37,7 +37,7 @@ class Info extends React.Component {
             return (
                 <Wrapper>
                     <div>
-                    <Checkin passUpCoordinates={this.passUpCoordinates} />
+                        <Checkin passUpCoordinates={this.passUpCoordinates} />
                         {data.map((game) => {
                             const condition = (((((parseFloat(coord.lat) - parseFloat(game.location.lat)) < .01) || ((parseFloat(coord.lat) - parseFloat(game.location.lat)) > -.01))
                                 ||
@@ -65,28 +65,49 @@ class Info extends React.Component {
             return (
                 counter = 0,
                 console.log(counter),
-                
-                <div className="card text-center">
-                <div className="card-body"></div>
-                < div className="card-body" >
-                    <h5 className="card-title">Keep ExpLoring!</h5>
-                    <p className="card-text">Your first task is to travel to</p>
-                    
-                    <button className="btn btn-primary" onClick={this.handleStartClick}>Check In</button>
-                    {/* <Checkin passUpCoordinates={this.passUpCoordinates} /> */}
-                </div >
-                </div >
-
+                <Wrapper>
+                <div>
+                <Checkin passUpCoordinates={this.passUpCoordinates} />
+                        {data.map((game) => {
+                            const condition = (((((parseFloat(coord.lat) - parseFloat(game.location.lat)) < .001) || ((parseFloat(coord.lat) - parseFloat(game.location.lat)) > -.001))
+                                ||
+                                (((parseFloat(game.location.lat) - parseFloat(coord.lat)) < .001) || (parseFloat(game.location.lat) - parseFloat(coord.lat)) > -.001))
+                                &&
+                                ((((parseFloat(game.location.lng) - parseFloat(coord.lng)) < .001) || (parseFloat(game.location.lng) - parseFloat(coord.lng)) > -.001)
+                                    ||
+                                    (((parseFloat(coord.lng) - parseFloat(game.location.lng)) < .001) || (parseFloat(coord.lng) - parseFloat(game.location.lng)) > -.001)
+                                ));
+                            if (condition === false) {
+                                return (
+                                    console.log(game.name),
+                                    <div className="card text-center">
+                                    <div className="card-body"></div>
+                                    < div className="card-body" >
+                                        <h5 className="card-title">Keep ExpLoring!</h5>
+                                        <p className="card-text">Your first task is to travel to</p>
+                                        <p>{game.name}</p>
+                                        <button className="btn btn-primary" onClick={this.handleStartClick}>Check In</button>
+                                        {/* <Checkin passUpCoordinates={this.passUpCoordinates} /> */}
+                                    </div >
+                                </div >
+                                    )
+                            } else {
+                                console.log(counter);
+                            }
+                        })
+                    }
+                    </div >
+                </Wrapper >
             )
         } else {
             return <div className="card text-center">
-                <div className="card-body">
-                    <h5 className="card-title">Welcome, ExpLorers!</h5>
-                    <p className="card-text">The adventure begins in </p>
+                            <div className="card-body">
+                                <h5 className="card-title">Welcome, ExpLorers!</h5>
+                                <p className="card-text">The adventure begins in </p>
                     <button className="btn btn-primary" onClick={this.handleStartClick}>Begin your quest!</button>
                 </div>
             </div>
-        }
+                }
     }
 }
-export default Info;
+                export default Info;                

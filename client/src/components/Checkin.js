@@ -32,7 +32,7 @@ export class Checkin extends React.Component {
             display: 'block',
             margin: '0 auto', 
             width: '60%',
-            height: '75%'
+            height: '100%'
         }
 
         if (loading) {
