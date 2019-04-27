@@ -3,8 +3,9 @@
         "id": "1",
         "name": "Clark Planetarium",
         "location": {
-            "lat": "40.7615069",
-            "lng": "-111.8404281"
+            
+            "lat": "40.7418018 ",
+            "lng": "-111.8747095"
         },
         "travelTime": 60,
         "monsterName": "Sammie Wilkinson",

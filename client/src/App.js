@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css';
 import Register from './components/Modals/register';
-
 import Login from './components/Modals/login';
-
 import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
 import Info from './components/Info';
-import Timer from './components/Timer'
-
 import API from "./utils/API"
 
 class App extends Component {
 
-  state ={
+  state = {
     character: "",
     userId: "",
     validated: false,
@@ -25,25 +21,25 @@ class App extends Component {
     score: ""
 
   }
-  
-  sendUserToApp= (id) =>{
-     this.setState({userId: id});
-     const that = this;
-     console.log(id);
-     API.CharacterName(id).then(function(response){
-       console.log(response.data.name)
-       let character = response.data.name;
-      that.setState({character: character});
+
+  sendUserToApp = (id) => {
+    this.setState({ userId: id });
+    const that = this;
+    console.log(id);
+    API.CharacterName(id).then(function (response) {
+      console.log(response.data.name)
+      let character = response.data.name;
+      that.setState({ character: character });
     })
     console.log(this.state.character)
-   }
-   
-   handleShowModal = () =>{
+  }
+
+  handleShowModal = () => {
     console.log(this.show);
-   this.setState({show: true});
+    this.setState({ show: true });
   }
   render() {
-    
+
     return (
 
       <Router>
@@ -52,18 +48,18 @@ class App extends Component {
           <Navbar
             characterName={this.state.character}
             userScore={this.state.score}
-            />
+          />
           <Switch >
-            <Route 
-              exact path="/register" 
+            <Route
+              exact path="/register"
               render={(props) =>
                 <Register
                   {...props}
                   sendUserToApp={this.sendUserToApp}
                 />
               }
-               />
-              
+            />
+
             <Route
               onClick={this.handleshow}
               exact path='/login'
@@ -85,8 +81,6 @@ class App extends Component {
 
           </Switch>
           <Info />
-          
-          <Timer />
         </div>
 
       </Router>
