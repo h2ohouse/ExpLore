@@ -85,6 +85,7 @@ class App extends Component {
 
           </Switch>
           <Info />
+          
           <Timer />
         </div>
 
