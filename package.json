@@ -1,39 +1,24 @@
 {
-  "name": "finalproject",
-  "version": "0.1.0",
-  "private": true,
+  "name": "explore",
+  "version": "1.0.0",
+  "description": "final project",
   "main": "server.js",
-  "scripts": {
-    "start": "NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
-  },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
-    "bootstrap": "^4.3.1",
-    "concurrently": "^4.0.1",
-    "express": "^4.16.4",
-    "google-maps-react": "^2.0.2",
-    "is-empty": "^1.2.0",
-    "jsonwebtoken": "^8.3.0",
-    "mongodb": "^3.2.3",
-    "mongoose": "^5.5.1",
-    "morgan": "^1.9.1",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
-    "react-bootstrap": "^1.0.0-beta.8",
-    "validator": "^10.9.0"
-  }
+    "mongodb": "^3.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gudolph/ExpLore.git"
+  },
+  "author": "Andrew W, Jason H, Jeremy C",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gudolph/ExpLore/issues"
+  },
+  "homepage": "https://github.com/gudolph/ExpLore#readme"
 }
