@@ -6,7 +6,7 @@ Where real life adventure becomes digital
 * Players compete in real time to battle monsters on the app at real world locations.
 * Finish first to claim the top spot
 
-![image of app header]()
+![image of app header](https://raw.githubusercontent.com/gudolph/ExpLore/master/imagesForReadMe/header.JPG)
 
 ![image of monster from battle]()
 
