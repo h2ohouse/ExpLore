@@ -4,8 +4,10 @@ import Wrapper from "./Wrapper";
 import Location from "./Location.js";
 import data from "../game.json";
 import Timer from "./Timer";
+import { clearInterval } from "timers";
 
 let counter = 0;
+let Game;
 
 class Info extends React.Component {
     constructor(props) {
@@ -13,22 +15,24 @@ class Info extends React.Component {
         this.handleStartClick = this.handleStartClick.bind(this);
         this.state = { gameStart: false, coord: {}, game: {} };
     }
-
+    
+   
     handleStartClick() {
-        this.setState({ gameStart: true });
+        
+        this.setState({ gameStart: true })
     }
+       
 
     passUpCoordinates = (coord) => {
         this.setState({ coord: coord });
         console.log(coord.lat, coord.lng)
     }
 
-    // }
+  
     render() {
         // if state gameStart is true, load Checkin component.
         const gameStart = this.state.gameStart;
         const coord = this.state.coord;
-
         if (coord.lat !== undefined) {
             console.log(coord.lat);
         };
@@ -47,9 +51,31 @@ class Info extends React.Component {
                                     (((parseFloat(coord.lng) - parseFloat(game.location.lng)) < .001) || (parseFloat(coord.lng) - parseFloat(game.location.lng)) > -.001)
                                 ));
                             if (condition) {
+                                Game = game;
                                 return (
-                                    console.log(game.name, game.location.lat, game.location.lng),
-                                    <Location key={game.id} name={game.name} monster={game.monsterName} image={game.monsterImage} lat={game.location.lat} lng={game.location.lng}  />                                    
+                                    // this.setState({game: 
+                                    //     {
+                                    //     key: Game.id,
+                                    //     name: Game.name,
+                                    //     monster: Game.monsterName,
+                                    //     image:Game.monsterImage,
+                                    //     lat: Game.location.lat,
+                                    //     lng: Game.location.lng,
+                                    //     mosterHP: Game.monsterHP
+                                    // }}),
+                                    console.log(game.name, game.location.lat, game.location.lng, game.monsterHP),
+                                    //this.setGameData(),
+                                    <Location 
+                                        key={game.id} 
+                                        name={game.name}
+                                        monster={game.monsterName}
+                                        image={game.monsterImage}
+                                        lat={game.location.lat}
+                                        lng={game.location.lng}
+                                        monsterHP={game.monsterHP}
+                                        currentGame={this.props.currentGame}
+                                        game={this.state.game} />   
+                                                              
                                     )
                             } else {
                                 counter++;
@@ -83,7 +109,8 @@ class Info extends React.Component {
                                 ));
                             if (condition === false) {
                                 return (
-                                    console.log(game.name),
+                                    // this.props.currentGame(game.name, game.location.lat, game.location.lng, game.monsterHP),
+                                    console.log(game.name, game.mosterHP),
                                     <div className="card text-center">
                                     <div className="card-body"></div>
                                     < div className="card-body" >
@@ -107,7 +134,7 @@ class Info extends React.Component {
             return (<div className="card text-center">
                 <div className="card-body">
                     <h5 className="card-title">Get going!</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p className="card-text">Time to hunt some monsters and find the witch.</p>
                     <button className="btn btn-primary" onClick={this.handleStartClick}>Check In</button>
                 </div>
                 <Timer />
@@ -115,5 +142,4 @@ class Info extends React.Component {
         }
     }
 };
-
 export default Info;
